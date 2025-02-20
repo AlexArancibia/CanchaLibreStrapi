@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_headers",
+  "info": {
+    "displayName": "header",
+    "icon": "feather"
+  },
+  "options": {},
+  "attributes": {
+    "logoText": {
+      "displayName": "logoText",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.logo-text"
+    },
+    "ctaButton": {
+      "displayName": "ctaButton",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.cta-button"
+    }
+  }
+}

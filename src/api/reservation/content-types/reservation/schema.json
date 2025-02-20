@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "reservations",
+  "info": {
+    "singularName": "reservation",
+    "pluralName": "reservations",
+    "displayName": "Reservation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "start_date": {
+      "type": "datetime"
+    },
+    "end_date": {
+      "type": "datetime"
+    },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "Pagado",
+        "Pendiente",
+        "Cancelado",
+        "Parcialmente Pagado"
+      ],
+      "default": "Pagado",
+      "required": true
+    },
+    "field": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::field.field",
+      "inversedBy": "reservations"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "reservations"
+    },
+    "payment_metadata": {
+      "type": "json"
+    },
+    "amount": {
+      "type": "decimal",
+      "required": true
+    },
+    "payment_method": {
+      "type": "enumeration",
+      "enum": [
+        "Paypal",
+        "Mercado Pago",
+        "Stripe",
+        "Yape"
+      ],
+      "default": "Yape",
+      "required": true
+    }
+  }
+}

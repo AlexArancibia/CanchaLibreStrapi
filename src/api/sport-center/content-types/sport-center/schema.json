@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sport_centers",
+  "info": {
+    "singularName": "sport-center",
+    "pluralName": "sport-centers",
+    "displayName": "Sport Center",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string"
+    },
+    "district": {
+      "type": "enumeration",
+      "enum": [
+        "Surco",
+        "San Isidro",
+        "Molina"
+      ],
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "email"
+    },
+    "owner": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "sport_centers"
+    },
+    "fields": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::field.field",
+      "mappedBy": "sport_center"
+    }
+  }
+}

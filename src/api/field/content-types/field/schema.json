@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fields",
+  "info": {
+    "singularName": "field",
+    "pluralName": "fields",
+    "displayName": "Field"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "sport": {
+      "type": "enumeration",
+      "enum": [
+        "Futbol",
+        "Tenis",
+        "Basket"
+      ],
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "features": {
+      "type": "json"
+    },
+    "description": {
+      "type": "string"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "schedule": {
+      "displayName": "schedule",
+      "type": "component",
+      "repeatable": true,
+      "component": "field-schedule.schedule"
+    },
+    "night_price": {
+      "type": "decimal"
+    },
+    "reservations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::reservation.reservation",
+      "mappedBy": "field"
+    },
+    "sport_center": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::sport-center.sport-center",
+      "inversedBy": "fields"
+    }
+  }
+}

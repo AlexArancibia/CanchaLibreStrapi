@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_field_schedule_schedules",
+  "info": {
+    "displayName": "schedule",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "enumeration",
+      "enum": [
+        "Lunes",
+        "Martes",
+        "Miercoles",
+        "Jueves",
+        "Viernes",
+        "Sabado",
+        "Domingo"
+      ],
+      "required": true
+    },
+    "start_hour": {
+      "type": "time"
+    },
+    "end_hour": {
+      "type": "time"
+    }
+  }
+}
