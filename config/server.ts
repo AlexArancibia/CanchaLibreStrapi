@@ -7,4 +7,10 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  settings: {
+    session: {
+      enabled: true,
+      secure: false, // Cambiar a `false` si sigue fallando
+    },
+  },
 });

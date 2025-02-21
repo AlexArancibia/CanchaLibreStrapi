@@ -14,7 +14,7 @@ export default [
   {
     name: 'strapi::session',
     config: {
-      secure: true, // Usa cookies seguras (solo funciona en HTTPS)
+      secure: false, // Usa cookies seguras (solo funciona en HTTPS)
       sameSite: 'none', // Permite compartir cookies con el frontend
     },
   },
