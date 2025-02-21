@@ -2,6 +2,11 @@ module.exports = ({ env }) => ({
   "users-permissions": {
     config: {
       jwtSecret: env('JWT_SECRET'),
+      session: {
+        cookie: {
+          secure: false, // Asegúrate de que esté en false
+        },
+      },
       providers: {
         google: {
           clientId: env("GOOGLE_CLIENT_ID"),
