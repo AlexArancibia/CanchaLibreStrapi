@@ -12,10 +12,19 @@ export default [
     },
   },
   {
+    name: 'strapi::session',
+    config: {
+      cookie: {
+        secure: true, // Cookies seguras solo en producción
+        sameSite: 'lax', // Permite cookies en entornos locales
+      },
+    },
+  },
+  {
     name: 'strapi::cors',
     config: {
       origin: [
-        'http://localhost:3000', // Frontend local
+        'http://localhost:1337', // Frontend local
         'https://canchalibrecms.emetstudio.com', // Backend de Strapi
       ],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
@@ -26,7 +35,6 @@ export default [
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
-  'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];
